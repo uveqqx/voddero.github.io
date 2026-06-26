@@ -1,3 +1,201 @@
+
+Claude ha terminado la respuesta
+Quiero abrirme una cuenta de developer en Tiktok para SUBIR CONTENIDO. Como lo hago? A la hora de abrir la cuetna de developer me piden imagnes y demas que no puedo proporcionar
+
+21 jun
+
+Web buscada
+Web buscada
+Aquí te aclaro algo importante que puede ahorrarte mucho tiempo y confusión:
+
+¿Necesitas realmente una cuenta de developer?
+Probablemente no. La cuenta de developer de TikTok no es para subir contenido como creador. Está pensada para desarrolladores que construyen apps e integraciones técnicas con la API de TikTok.
+
+Para subir contenido a TikTok tienes dos opciones mucho más sencillas:
+
+✅ Opción 1: Cuenta Personal (la más habitual para creadores)
+Se crea directamente en la app de TikTok o en tiktok.com
+Puedes subir vídeos, acceder a estadísticas, monetización, música, etc.
+Es ideal para creadores de contenido y personajes públicos, con acceso a herramientas de creador avanzadas para aprender sobre tu contenido y formar una comunidad. 
+TikTok
+✅ Opción 2: Cuenta de Empresa (si representas una marca)
+Permite a marcas y empresas gestionar su presencia en Internet con herramientas de marketing de TikTok más específicas. 
+TikTok
+También se crea desde la app normal.
+¿Cuándo SÍ necesitas una cuenta developer?
+Solo si quieres publicar vídeos de forma automatizada mediante código/API (por ejemplo, desde una herramienta externa o una app propia). En ese caso sí se requiere el proceso de revisión con imágenes y documentación que te están pidiendo.
+
+¿Qué quieres hacer exactamente?
+
+¿Subir vídeos tú mismo desde el móvil/PC como creador?
+¿Automatizar la subida de vídeos desde una herramienta o script?
+Dependiendo de eso te oriento mejor.
+
+Automatizar la subdia
+
+21 jun
+
+Web buscada
+Web buscada
+Bien, aquí tienes el panorama completo para automatizar la subida de vídeos a TikTok:
+
+Camino oficial: TikTok Content Posting API
+La Content Posting API es la ruta oficial y sancionada por TikTok para publicar contenido programáticamente. Soporta dos modos: Direct Post (publica inmediatamente en el perfil) y Upload to Inbox / Creator Draft (envía el vídeo a la bandeja de entrada del usuario para revisión manual antes de publicar). 
+TokPortal
+
+Pasos para conseguir acceso:
+Crea la cuenta developer en developers.tiktok.com con tu email
+Crea una app en el portal → aquí es donde te piden el icono y descripción
+Solicita el scope de Content Posting API para tu app
+Espera la revisión manual de TikTok
+La revisión normalmente tarda entre 2 y 6 semanas. TikTok aprueba herramientas de gestión de contenido, plataformas de scheduling y dashboards de redes sociales. Son estrictos: apps sin un caso de uso claro y documentado son rechazadas. 
+Zernio
+
+Sobre las imágenes que te piden:
+Tienes que seleccionar la categoría que mejor se adapte a tu app, subir un icono de tu aplicación, describir lo que hace tu app o sitio web, y hacer clic en enviar. El icono puede ser algo sencillo que crees tú mismo, no tiene que ser nada elaborado — solo una imagen representativa. 
+Taggbox
+
+Alternativa más rápida: servicios intermediarios
+Si no quieres esperar semanas o que te rechacen la app, hay plataformas que ya tienen acceso aprobado a la API de TikTok y te permiten publicar a través de ellas con una sola llamada:
+
+Zernio — API unificada para TikTok, Instagram, YouTube, etc.
+Late (getlate.dev) — similar, orientada a developers
+Buffer / Later / Metricool — más orientadas a uso no-técnico pero también tienen APIs
+Estas plataformas abstraen toda la complejidad: el OAuth, la subida en chunks, la revisión de TikTok… con un endpoint simple para programar vídeos en TikTok y otras plataformas. 
+Late
+
+¿Qué te conviene?
+API directa de TikTok	Servicio intermediario
+Coste	Gratis	De pago (mensual)
+Tiempo de setup	2-6 semanas	Horas
+Complejidad técnica	Alta	Baja
+Control	Total	Limitado
+¿Cuál es tu caso? ¿Quieres publicar en tu propia cuenta solamente, o en múltiples cuentas? ¿Tienes experiencia con APIs REST? Así te oriento mejor sobre qué ruta seguir.
+
+Solo me salen estos scopes: user
+user.info.stats
+Read access to a user's statistical data, such as likes count, follower count, following count, and video count
+Add
+user.info.profile
+Read access to profile_web_link, profile_deep_link, bio_description, is_verified.
+Add
+video
+video.list
+Read a user's public videos on TikTok
+Add
+
+21 jun
+Eso es porque tu app aún está en modo sandbox/básico y no tiene aprobación para la Content Posting API. Los scopes que ves son solo los de lectura, que se dan por defecto.
+
+Para que aparezca el scope de publicación (video.publish o similar) necesitas solicitarlo explícitamente dentro de tu app en el portal developer.
+
+Cómo hacerlo:
+Ve a tu app en developers.tiktok.com → Manage Apps
+Entra en tu app y busca la sección "Add products" o "Products"
+Ahí deberías ver "Content Posting API" como producto disponible para añadir
+Al añadirlo, te pedirá que rellenes un formulario justificando tu caso de uso — esto es lo que dispara la revisión manual de TikTok
+Si no ves Content Posting API en los productos disponibles:
+Puede ser porque:
+
+Tu app está incompleta (falta el icono, descripción, o Privacy Policy URL — esto es obligatorio)
+No has seleccionado la categoría correcta de app
+¿Tienes ya rellenados estos campos en tu app?
+
+Icono (cualquier imagen, no tiene que ser profesional)
+Descripción de la app
+URL de Privacy Policy (puedes usar un generador gratuito como privacypolicygenerator.info si no tienes web)
+Ese suele ser el bloqueo más común. Sin la Privacy Policy URL no te dejan acceder a productos avanzados.
+
+1782061271877_image.png
+Vamos a ir poco a poco:
+
+21 jun
+Perfecto, veo el formulario. Vamos campo por campo:
+
+1. App Icon
+Necesitas una imagen 1024x1024px, máx 5MB, en JPEG/JPG/PNG. Si no tienes una, puedo generarte una ahora mismo con texto "VODdero" o similar. ¿Quieres que te cree una?
+
+2. Category
+¿Qué hace exactamente VODdero? ¿Es una herramienta para gestionar/programar contenido tuyo propio, o algo más? Con eso te digo qué categoría elegir.
+
+3. Description (máx 120 caracteres)
+Te redacto yo una frase corta y efectiva en cuanto me confirmes el uso de la app.
+
+4. Terms of Service URL + Privacy Policy URL
+Estas son las que más bloquean a la gente. Necesitas URLs públicas accesibles. Opciones:
+
+Si tienes web propia → las añadimos ahí
+Si no tienes web → puedo ayudarte a generar los textos y alojarlos gratis (GitHub Pages, Notion público, etc.)
+5. Platforms
+Marca las que uses: Web, Desktop, Android o iOS según desde dónde vayas a subir los vídeos.
+
+Cuéntame qué hace VODdero y si tienes web, y con eso resolvemos todo de una vez.
+
+Quiero la api para subir contenido automatizado a varias cuentas de marcas
+
+21 jun
+Eso es importante saberlo antes de seguir, porque cambia bastante el escenario.
+
+⚠️ Problema principal: múltiples cuentas
+La API requiere que cada cuenta de TikTok autorice tu app individualmente via OAuth. Esto significa recoger tokens de acceso por cuenta, gestionar ciclos de refresco (los tokens caducan), y almacenar credenciales de forma segura. A partir de 10+ cuentas, esto se convierte en una carga técnica significativa. 
+TokPortal
+
+Además, TikTok no solo vigila qué publicas, sino cómo publicas. Cuentas que publican desde rangos de IP idénticos, con metadatos idénticos, en timestamps idénticos, son marcadas — incluso usando la API oficial. 
+TokPortal
+
+¿Qué categoría poner en el formulario?
+Para tu caso (gestión de contenido de múltiples marcas) la categoría correcta sería algo como "Content Management" o "Social Media Management". TikTok aprueba este tipo de herramientas, pero el formulario de solicitud del scope de publicación tendrá que justificar bien el caso de uso.
+
+Mi recomendación honesta
+Para gestionar varias cuentas de marcas, la ruta más pragmática es usar un servicio intermediario que ya tiene aprobación de TikTok:
+
+Herramienta	Para quién	API disponible
+Buffer	Agencias pequeñas	Sí
+Later	Creadores y marcas	Sí
+Metricool	Agencias	Sí
+Zernio	Developers	Sí, REST API
+Ir por la API directa de TikTok para múltiples marcas implica semanas de aprobación, OAuth por cada cuenta, gestión de tokens... es mucho trabajo a menos que estés construyendo una plataforma SaaS.
+
+¿Cuál es tu situación? ¿Estás construyendo una herramienta propia, o simplemente quieres automatizar la subida para tus clientes sin desarrollar nada desde cero?
+
+1782061531459_image.png
+Vamos a pedir la autorizacion para no depender de herramientas y mientras usaremos herramientas. Que relleno en ingles:
+
+21 jun
+Perfecto, vamos campo a campo:
+
+Category
+Cambia "Others" por "Social Media Management" si existe esa opción. Si no aparece, déjalo en Others.
+
+Description (máx 120 caracteres, en inglés):
+
+VODdero automates video publishing to multiple brand TikTok accounts for social media management agencies.
+(104 caracteres ✓)
+
+Terms of Service URL y Privacy Policy URL
+
+Necesitas URLs públicas reales. Lo más rápido sin tener web es crear dos páginas en Notion y hacerlas públicas. ¿Tienes cuenta de Notion? Si no, también lo podemos hacer con Google Docs publicado como web o GitHub Pages.
+
+Dime qué tienes disponible y te genero los textos listos para pegar.
+
+Platforms
+
+Marca Web y Desktop (asumiendo que tu herramienta de automatización corre desde un servidor/PC).
+
+El icono sigue pendiente. ¿Quieres que te genere una imagen 1024x1024 para VODdero?
+
+1782061597372_image.png
+Generame Los terms la Privacy y tambien me pide ahora Web/Desktop URL con google docs
+
+21 jun
+Perfecto. Voy a generarte los tres documentos y luego te explico cómo publicarlos en Google Docs.
+
+
+Check skills available
+Check skills available
+Aquí tienes los tres textos listos para pegar en Google Docs:
+
+📄 DOCUMENTO 1 — Terms of Service
 TERMS OF SERVICE — VODdero
 Last updated: June 21, 2026
 
@@ -22,5 +220,1399 @@ VODdero is provided "as is". We are not liable for any damages arising from the 
 We reserve the right to modify these terms at any time. Continued use of the service constitutes acceptance of updated terms.
 
 7. CONTACT
+For questions about these Terms, contact: legal@voddero.com
+📄 DOCUMENTO 2 — Privacy Policy
+PRIVACY POLICY — VODdero
+Last updated: June 21, 2026
+
+1. INFORMATION WE COLLECT
+VODdero collects only the information necessary to operate the service:
+- TikTok account access tokens (OAuth 2.0), used solely to publish content on your behalf.
+- Basic TikTok profile information (username, profile picture) for account identification.
+- Video files and metadata you submit for publishing.
+
+2. HOW WE USE YOUR INFORMATION
+- To authenticate and publish content to connected TikTok accounts.
+- To display connected account information within the VODdero dashboard.
+- We do not sell, rent, or share your data with third parties.
+
+3. DATA RETENTION
+Access tokens are stored securely and deleted upon account disconnection. We do not retain video content after successful publishing.
+
+4. THIRD-PARTY SERVICES
+VODdero integrates with the TikTok API. By connecting your TikTok account, you also agree to TikTok's Privacy Policy (tiktok.com/legal/privacy-policy).
+
+5. SECURITY
+We implement industry-standard security measures to protect your data. However, no method of transmission over the internet is 100% secure.
+
+6. YOUR RIGHTS
+You may disconnect your TikTok account at any time from the VODdero dashboard or directly from your TikTok account settings.
+
+7. CONTACT
+For privacy-related questions, contact: privacy@voddero.com
+🌐 DOCUMENTO 3 — Web/Desktop URL (página de presentación)
+VODdero — Social Media Management Tool
+
+VODdero is a professional content management platform designed for agencies and brands. 
+It enables authorized users to schedule and publish video content across multiple TikTok 
+accounts through the official TikTok API.
+
+Features:
+- Automated video publishing via TikTok Content Posting API
+- Multi-account management for brands and agencies
+- Secure OAuth 2.0 authentication per account
+- Scheduled and direct publishing modes
+
+Contact: hello@voddero.com
+Cómo publicarlos en Google Docs (3 pasos):
+Ve a docs.google.com → crea un doc nuevo → pega el texto
+Arriba a la derecha: Compartir → cambia a "Cualquier persona con el enlace puede ver"
+Copia la URL y pégala en el campo correspondiente del formulario de TikTok
+Haz lo mismo para los tres documentos. El de "Web/Desktop URL" puedes usar cualquiera de los tres, pero el de presentación (Documento 3) es el más apropiado para ese campo.
+
+¿Quieres que también te genere el icono 1024x1024 para terminar el formulario?
+
+1782061803340_image.png
+me pide verificar
+
+21 jun
+El problema es que TikTok no acepta URLs de edición de Google Docs (/edit?usp=sharing). Necesitas la URL de vista pública.
+
+Cómo arreglarlo (para cada documento):
+Abre el Google Doc
+Arriba a la derecha → Compartir
+En "Acceso general" selecciona → "Cualquier persona con el enlace" + rol "Lector"
+Haz clic en "Copiar enlace"
+La URL correcta tiene este formato:
+
+https://docs.google.com/document/d/XXXXXXX/view
+o
+
+https://docs.google.com/document/d/XXXXXXX/pub
+Aún mejor → usa "Publicar en la web":
+
+En el Doc: Archivo → Compartir → Publicar en la web
+Haz clic en Publicar → copia esa URL
+Esa URL es completamente pública y TikTok la verificará sin problemas
+Haz esto con los 3 documentos y sustituye las URLs en el formulario. ¿Te sigue dando error después?
+
+1782061935935_image.png
+he añadido las rutas pub y me dice que hay que verificar, que opcion cojo?
+
+21 jun
+Con Google Docs no puedes verificar ninguna de las dos opciones porque no tienes control sobre el dominio docs.google.com ni puedes subir archivos ahí.
+
+Necesitas una URL de un dominio que controles tú.
+
+Solución más rápida: GitHub Pages (gratis)
+Crea cuenta en github.com (si no tienes)
+Crea un repositorio nuevo llamado voddero
+Crea un archivo index.html con el texto de presentación
+Crea privacy.html y terms.html con los otros dos textos
+Ve a Settings → Pages → Source: main branch
+GitHub te da una URL tipo: https://tuusuario.github.io/voddero/
+Con esa URL sí puedes verificar con "URL prefix" + signature file (GitHub te deja subir archivos al repo).
+
+Alternativa aún más rápida: Notion
+Crea las 3 páginas en Notion
+Share → Publish to web (toggle activado)
+Notion te da URLs públicas tipo https://tuusuario.notion.site/...
+Esas URLs son de un dominio que "controlas" vía Notion
+Pero el problema es el mismo: no puedes añadir un DNS record ni subir un archivo de verificación a notion.site.
+
+La verdad: necesitas un dominio propio
+Para verificar de verdad, lo más sencillo y barato es:
+
+Comprar un dominio en Namecheap (~10€/año), por ejemplo voddero.com
+Usar Cloudflare Pages o GitHub Pages para alojar las páginas gratis
+Verificar con DNS record (opción Domain) — solo añades un registro TXT en Namecheap
+¿Tienes ya algún dominio, o quieres que te guíe por el camino de GitHub Pages con el archivo de verificación?
+
+1782062074952_image.png
+1782062081568_image.png
+21 jun
+Perfecto, lo tienes casi listo. Tu sitio está live en:
+
+https://uveqqx.github.io/voddero.github.io/
+
+URLs que poner en TikTok:
+Campo	URL
+Terms of Service URL	https://uveqqx.github.io/voddero.github.io/terms.html
+Privacy Policy URL	https://uveqqx.github.io/voddero.github.io/privacy.html
+Web/Desktop URL	https://uveqqx.github.io/voddero.github.io/
+Para verificar con TikTok (URL prefix):
+Cuando hagas clic en "Verify URL properties" y elijas URL prefix:
+
+TikTok te dará un archivo .html para descargar (algo tipo TikTokxxxxxxx.html)
+Ve a tu repo de GitHub → Add file → Upload files
+Sube ese archivo a la raíz del repo
+Espera 1-2 minutos a que se despliegue
+Vuelve a TikTok y haz clic en Verify
+¿Ya te ha dado TikTok el archivo de verificación o aún no has llegado a ese paso?
+
+1782062222702_image.png
+Siguiente apartado del apply a la api
+
+21 jun
+Aquí es donde se complica. Te piden dos cosas:
+
+1. Explicación escrita (máx 1000 caracteres)
+Pega esto:
+
+VODdero is a social media management platform that enables marketing agencies 
+to schedule and publish video content to multiple brand TikTok accounts. 
+
+We use the Content Posting API to programmatically upload videos on behalf of 
+brand accounts that have explicitly authorized our app via OAuth 2.0. 
+
+The user.info.profile and user.info.stats scopes are used to display connected 
+account information and performance metrics in our dashboard. The video.publish 
+scope is used to post scheduled content directly to each authorized account.
+
+Our target users are social media managers handling content for multiple brand 
+clients. Each brand account independently authorizes VODdero before any content 
+is published on their behalf.
+2. El vídeo demo — aquí está el reto real
+TikTok pide un vídeo que muestre el flujo completo. Tienes dos opciones:
+
+Opción A — Vídeo en sandbox (recomendada)
+Graba tu pantalla mostrando:
+
+El dashboard de VODdero (aunque sea básico)
+El flujo OAuth de TikTok (conectar una cuenta)
+La llamada a la API en sandbox publicando un vídeo
+Opción B — Mockup/prototipo
+Si aún no tienes la app construida, puedes grabar un prototipo en Figma o incluso una demo simulada explicando el flujo.
+
+¿Tienes algo de la app ya construido, o estamos en fase cero? Dependiendo de eso te digo cómo abordar el vídeo.
+
+No tengo nada
+
+21 jun
+Sin app construida, hay dos caminos realistas:
+
+Opción A — Grabar una demo simulada (más rápido)
+Creas una página HTML sencilla que simule el dashboard de VODdero y grabas la pantalla mientras "navegas" por ella. TikTok quiere ver el flujo, no necesariamente que esté en producción.
+
+El vídeo mostraría:
+
+Pantalla de login → "Conectar cuenta TikTok" (botón OAuth)
+Dashboard con cuentas conectadas
+Formulario de subida de vídeo
+Confirmación de publicación
+Puedo generarte ese HTML ahora mismo — sería una web estática que sube a tu GitHub Pages y grabas la pantalla navegando por ella.
+
+Opción B — Esperar y construir primero
+Construir aunque sea un prototipo funcional mínimo con la API en sandbox antes de solicitar la revisión. Más lento pero más sólido.
+
+Mi recomendación
+Ve por la Opción A. TikTok indica explícitamente que si la app no ha sido aprobada antes, pueden usar el entorno sandbox para demostrar la integración. Una demo visual bien hecha es suficiente.
+
+¿Quieres que te genere el HTML del dashboard simulado de VODdero para grabarlo?
+
+No va a ser una aplicacion publica como tal, es privada, para mi uso con marcas
+
+21 jun
+Eso cambia todo y simplifica mucho las cosas.
+
+Si es uso privado (solo tus cuentas de marcas)
+No necesitas pasar el App Review de TikTok para producción. Puedes operar enteramente en modo Sandbox porque:
+
+En sandbox puedes conectar hasta 10 cuentas de prueba (tester accounts)
+Publicas vídeos en modo draft/inbox sin que sean públicos
+No necesitas aprobación de TikTok para esto
+El flujo real para ti sería:
+Añades las cuentas de tus marcas como "Tester accounts" en el portal developer
+Cada marca autoriza tu app via OAuth (lo hacen una vez)
+Tu script/herramienta sube los vídeos usando los tokens de esas cuentas
+Los vídeos llegan a la bandeja de entrada de cada cuenta para publicarlos manualmente, o directamente si usas Direct Post en sandbox con cuentas privadas
+Lo que necesitas ahora es mucho más simple:
+Client Key y Client Secret de tu app (ya los tienes)
+Un script sencillo en Python o Node.js que use la API
+Añadir las cuentas de tus marcas como testers
+¿Sabes programar en Python o prefieres Node.js? Te genero el script completo para autenticar y subir vídeos.
+
+Pero se quedan en privado, yo quiero que sea automaticamente visibles
+
+21 jun
+Tienes razón, ese es el límite clave del sandbox.
+
+El problema:
+Sandbox → los vídeos nunca se publican públicamente, solo van a bandeja de entrada o quedan en draft
+Producción → publica directamente y de forma visible, pero requiere pasar el App Review
+No hay forma de saltarse esto con la API oficial.
+
+Opciones reales:
+Opción 1 — Pasar el App Review igualmente
+Aunque sea uso privado, puedes solicitar la revisión. Para el vídeo demo puedes grabar:
+
+Tú mismo navegando por el portal developer
+El flujo OAuth en sandbox con una cuenta tuya
+Una llamada a la API via Postman o similar mostrando la respuesta
+No necesitas una app bonita. Una demo técnica con Postman es suficiente para muchos casos de uso internos.
+
+Opción 2 — Usar una herramienta de terceros ya aprobada
+Como Metricool, Buffer o Later, que ya tienen acceso de producción aprobado por TikTok. Conectas las cuentas de tus marcas y automatizas desde ahí. Tienen API o funciones de scheduling.
+
+Opción 3 — Que cada marca publique manualmente desde bandeja de entrada
+Tú subes el vídeo automáticamente a su inbox y ellos dan un tap para publicar. Poco automatizado pero funciona hoy sin aprobación.
+
+¿Cuántas marcas/cuentas son y con qué frecuencia publicas? Con eso valoro si merece la pena pelearse con el App Review o usar una herramienta existente.
+
+Vamos a hacerlo con el postman y probar suerte. Que hago exactamente?
+
+21 jun
+Perfecto. Vamos paso a paso.
+
+Lo que necesitas antes de Postman:
+1. Consigue tu Client Key y Client Secret
+
+Ve a tu app en developers.tiktok.com → Manage Apps → entra en VODdero
+Copia el Client Key y Client Secret (los necesitarás ahora)
+2. Añade tu cuenta TikTok como Tester
+
+En el portal developer → tu app → Sandbox → Testers
+Añade el username de TikTok de la cuenta donde quieres probar
+El flujo tiene 3 pasos:
+1. Obtener el Authorization Code  (tú en el navegador)
+        ↓
+2. Cambiar ese code por un Access Token  (Postman)
+        ↓
+3. Subir el vídeo  (Postman)
+Paso 1 — Authorization Code (en el navegador)
+Abre tu navegador y ve a esta URL (sustituyendo tu Client Key):
+
+https://www.tiktok.com/v2/auth/authorize/?client_key=TU_CLIENT_KEY&response_type=code&scope=user.info.profile,video.publish&redirect_uri=https://uveqqx.github.io/voddero.github.io/&state=test123
+Inicia sesión con la cuenta TikTok de la marca
+Acepta los permisos
+Te redirigirá a tu GitHub Pages con un ?code=XXXXXXX en la URL
+Copia ese code — caduca en 10 minutos
+¿Tienes el Client Key a mano? Así preparamos ya la llamada de Postman para el paso 2.
+
+que es el state?
+
+21 jun
+El state es un parámetro de seguridad anti-CSRF.
+
+En la práctica para lo que estás haciendo puedes poner cualquier texto aleatorio, su función es simplemente que cuando TikTok te devuelva el redirect, puedas confirmar que la respuesta corresponde a tu solicitud original.
+
+Por ejemplo puedes poner:
+
+state=abc123
+state=voddero2026
+state=test
+No tiene ninguna implicación técnica para tu caso de uso. Solo asegúrate de que el valor que mandas y el que recibes de vuelta son iguales, pero como estás probando manualmente con Postman no necesitas ni verificarlo.
+
+¿Tienes ya el Client Key para montar la URL del paso 1?
+
+Hubo un problema
+No se pudo iniciar sesión con TikTok, probablemente, debido a ajustes específicos de la aplicación.
+Si eres un desarrollador, corrige lo siguiente y vuelve a intentarlo:
+
+client_key Consulta la [Documentación para desarrolladores](https://developers.tiktok.com/doc) para obtener más información.
+21 jun
+El error es en el client_key. Vamos a verificarlo:
+
+Comprueba estos puntos:
+1. Que el Client Key esté bien copiado
+
+Ve a developers.tiktok.com → Manage Apps → VODdero
+El Client Key suele tener este formato: aw1234abc567xyz
+Asegúrate de que no tiene espacios al principio ni al final al pegarlo en la URL
+2. Que el redirect_uri coincida exactamente
+
+En el portal de tu app debe estar registrada la URL:
+https://uveqqx.github.io/voddero.github.io/
+Tiene que ser exactamente igual — con o sin / final importa
+Para verificarlo ve a tu app en el portal → busca la sección "Redirect URI" o "OAuth redirect" y confirma que esa URL está añadida ahí.
+
+3. Que el scope video.publish esté añadido a tu app
+
+Si no has añadido aún el producto Content Posting API a la app, ese scope no es válido y puede causar el error
+¿Puedes decirme qué ves en la sección de Redirect URIs de tu app en el portal developer? Ahí probablemente está el problema.
+
+añademestas scopes: Scopes
+Add scopes
+user.info.basic
+Read a user's profile info (open id, avatar, display name ...)
+Included in Login Kit
+video.publish
+Directly post content to a user's TikTok profile.
+Included in Content Posting API
+video.upload
+Share content to creator's account as a draft to further edit and post in TikTok.
+Included in Content Posting API
+
+https://www.tiktok.com/v2/auth/authorize/?client_key=sbaw88qexzn2c48zry&response_type=code&scope=user.info.profile,video.publish&redirect_uri=https://uveqqx.github.io/voddero.github.io/
+
+Mostrar más
+21 jun
+Actualiza la URL añadiendo user.info.basic al scope, ya que es el que viene incluido por defecto con Login Kit y es necesario:
+
+https://www.tiktok.com/v2/auth/authorize/?client_key=sbaw88qexzn2c48zry&response_type=code&scope=user.info.basic,video.publish,video.upload&redirect_uri=https://uveqqx.github.io/voddero.github.io/&state=voddero2026
+Cambios respecto a la anterior:
+
+Añadido user.info.basic
+Añadido video.upload
+Mantenido video.publish
+Prueba esa URL en el navegador. ¿Qué pasa ahora?
+
+⚠️ Nota: También asegúrate de que en el portal developer, dentro de tu app, el Redirect URI registrado es exactamente:
+
+https://uveqqx.github.io/voddero.github.io/
+Ese suele ser el motivo más común del error anterior.
+
+Cual era el flujo que habia que grabaR?
+
+21 jun
+El flujo para el vídeo demo de TikTok era:
+
+Lo que tienes que grabar (con Postman + navegador):
+1. Mostrar la app en el portal developer
+
+Entrar en developers.tiktok.com → tu app VODdero
+Mostrar los scopes añadidos (user.info.basic, video.publish, video.upload)
+2. El flujo OAuth
+
+Pegar la URL de autorización en el navegador
+Mostrar cómo TikTok pide permisos a la cuenta
+Aceptar y mostrar el ?code=XXXXX que aparece en la URL de redirección
+3. En Postman — cambiar el code por un Access Token
+
+Llamada POST a https://open.tiktokapis.com/v2/oauth/token/
+Mostrar la respuesta con el access_token
+4. En Postman — subir un vídeo
+
+Llamada POST a la Content Posting API
+Mostrar la respuesta exitosa
+Básicamente es grabar exactamente lo que estamos haciendo ahora juntos. Cuando terminemos de que funcione en sandbox, lo grabas todo desde el principio y lo subes como demo.
+
+¿Seguimos con el OAuth para que primero lo hagas funcionar, y luego lo grabas?
+
+montame la siguiente llamada: https://uveqqx.github.io/voddero.github.io/?code=KPHCBh1pdhEUgUFZ2shwNIzSh0N_n2qMAGs8H0zMsKPx52qu_IqMS25XOKYGYJ8bCJia-mLLr46ND7q5PYEqe6dFJVHuyieDVayEei4CtVciGx9DibNJcxkmaVp9bt1eot7QcgOoo72rK9-cLrNhtCjte3E_9FoMfkDFqunq7q1pOb_rP_deQL8_VdgQd6aNvaevVAb6ZnQmDg8AAy3wSYJMR047al41unvHaZEFTCgYv_gfwCwIquMcBPI%2Av%214832.e1&scopes=user.info.basic%2Cvideo.publish%2Cvideo.upload&state=voddero2026
+
+21 jun
+Perfecto, ya tienes el code. Ahora en Postman:
+
+Llamada POST para obtener el Access Token
+URL:
+
+https://open.tiktokapis.com/v2/oauth/token/
+Method: POST
+
+Headers:
+
+Content-Type: application/x-www-form-urlencoded
+Body (selecciona x-www-form-urlencoded):
+
+Key	Value
+client_key	sbaw88qexzn2c48zry
+client_secret	TU_CLIENT_SECRET
+code	KPHCBh1pdhEUgUFZ2shwNIzSh0N_n2qMAGs8H0zMsKPx52qu_IqMS25XOKYGYJ8bCJia-mLLr46ND7q5PYEqe6dFJVHuyieDVayEei4CtVciGx9DibNJcxkmaVp9bt1eot7QcgOoo72rK9-cLrNhtCjte3E_9FoMfkDFqunq7q1pOb_rP_deQL8_VdgQd6aNvaevVAb6ZnQmDg8AAy3wSYJMR047al41unvHaZEFTCgYv_gfwCwIquMcBPI*v!4832.e1
+grant_type	authorization_code
+redirect_uri	https://uveqqx.github.io/voddero.github.io/
+⚠️ Date prisa — el code caduca en 10 minutos.
+
+¿Tienes el client_secret a mano?
+
+Unsupported path(Janus)
+
+21 jun
+Ese error significa que la URL del endpoint no es correcta. Prueba con esta:
+
+URL:
+
+https://open.tiktokapis.com/v2/oauth/token/
+Asegúrate de que en Postman:
+
+La URL termina en / (la barra final es obligatoria)
+No hay espacios antes ni después
+El método es POST (no GET)
+Si sigue fallando prueba con esta alternativa:
+
+https://open-api.tiktok.com/oauth/access_token/
+Con los mismos parámetros en el body.
+
+¿Qué URL estabas usando exactamente cuando te dio el error? ¿Y el método era POST?
+
+{
+    "error": "invalid_request",
+    "error_description": "The request parameters are malformed.",
+    "log_id": "20260621173214D0A7528FCCCE5040A974"
+}
+21 jun
+Buen avance, ya llega a la API. El problema es el formato del body. Asegúrate de que en Postman está exactamente así:
+
+En Postman → Body → selecciona x-www-form-urlencoded (no raw, no JSON)
+
+Y los campos uno a uno:
+
+Key	Value
+client_key	sbaw88qexzn2c48zry
+client_secret	TU_CLIENT_SECRET
+code	KPHCBh1pdhEUgUFZ2sh...
+grant_type	authorization_code
+redirect_uri	https://uveqqx.github.io/voddero.github.io/
+⚠️ Problema probable: el code que tenías ya caducó (caduca en 10 minutos).
+
+Tienes que repetir el paso 1 — volver a abrir la URL de autorización en el navegador:
+
+https://www.tiktok.com/v2/auth/authorize/?client_key=sbaw88qexzn2c48zry&response_type=code&scope=user.info.basic,video.publish,video.upload&redirect_uri=https://uveqqx.github.io/voddero.github.io/&state=voddero2026
+Copia el nuevo code de la URL y ejecuta Postman inmediatamente antes de que caduque.
+
+{
+    "access_token": "act.DO6INj0SiK3qZ7jPW13A1X5QFijEXG0AvC2pVACjhnBEoDDn4IkxS3jJ8fOG!4855.e1",
+    "expires_in": 86400,
+    "open_id": "-0001By_fdauL9wYqrWgX6xkT41oicBAxDp2",
+    "refresh_expires_in": 31536000,
+    "refresh_token": "rft.lphQqqBYNoZofpZZ0TwIR68FKCeDAl8Tk5vHXUBZAp8hpz9oqFaO3BOHwR9V!4824.e1",
+    "scope": "video.publish,video.upload,user.info.basic",
+    "token_type": "Bearer"
+}
+Mostrar más
+21 jun
+🎉 Perfecto, tienes el Access Token!
+
+Guarda estos datos en un lugar seguro:
+
+access_token: act.DO6INj0SiK3qZ7jPW13A1X5QFijEXG0AvC2pVACjhnBEoDDn4IkxS3jJ8fOG!4855.e1
+refresh_token: rft.lphQqqBYNoZofpZZ0TwIR68FKCeDAl8Tk5vHXUBZAp8hpz9oqFaO3BOHwR9V!4824.e1
+expires_in: 24 horas (el access token)
+refresh_expires_in: 1 año (el refresh token)
+Ahora el paso 3 — Inicializar la subida del vídeo
+Nueva llamada en Postman:
+
+URL:
+
+https://open.tiktokapis.com/v2/post/publish/video/init/
+Method: POST
+
+Headers:
+
+Key	Value
+Authorization	Bearer act.DO6INj0SiK3qZ7jPW13A1X5QFijEXG0AvC2pVACjhnBEoDDn4IkxS3jJ8fOG!4855.e1
+Content-Type	application/json; charset=UTF-8
+Body (raw → JSON):
+
+json
+{
+  "post_info": {
+    "title": "Test VODdero",
+    "privacy_level": "SELF_ONLY",
+    "disable_duet": false,
+    "disable_comment": false,
+    "disable_stitch": false
+  },
+  "source_info": {
+    "source": "FILE_UPLOAD",
+    "video_size": 1000000,
+    "chunk_size": 1000000,
+    "total_chunk_count": 1
+  }
+}
+⚠️ Cambia video_size y chunk_size por el tamaño real en bytes de tu vídeo. ¿Qué vídeo vas a subir de prueba?
+
+
+mas_caderas_que_falcon__dannahouse.mp4
+mp4
+
+Como adjunto el video? Sera este:
+
+21 jun
+Déjame ver el tamaño del vídeo:
+
+
+Check video file size
+Check video file size
+El vídeo pesa 2,634,953 bytes (~2.5MB). Actualiza el body de Postman con estos valores exactos:
+
+Body (raw → JSON):
+
+json
+{
+  "post_info": {
+    "title": "Test VODdero",
+    "privacy_level": "SELF_ONLY",
+    "disable_duet": false,
+    "disable_comment": false,
+    "disable_stitch": false
+  },
+  "source_info": {
+    "source": "FILE_UPLOAD",
+    "video_size": 2634953,
+    "chunk_size": 2634953,
+    "total_chunk_count": 1
+  }
+}
+Ejecuta esa llamada y dime qué responde. Te dará una upload_url y un publish_id que usaremos para el siguiente paso (subir el fichero real).
+
+{
+    "error": {
+        "code": "unaudited_client_can_only_post_to_private_accounts",
+        "message": "Please review our integration guidelines at https://developers.tiktok.com/doc/content-sharing-guidelines/",
+        "log_id": "202606211735057D00D171FCB4712D24FB"
+    }
+}
+21 jun
+Exactamente el error que esperábamos. Esto confirma lo que hablamos antes:
+
+Sin pasar el App Review, solo puedes publicar en cuentas privadas.
+
+Lo bueno de este punto:
+Ya tienes todo funcionando técnicamente:
+
+✅ OAuth funcionando
+✅ Access Token obtenido
+✅ Llamada a la API correcta
+✅ Solo falta la aprobación de TikTok
+Ahora toca grabar el vídeo demo para el App Review
+Tienes exactamente lo que TikTok quiere ver. Graba tu pantalla mostrando:
+
+Tu app en el portal developer → scopes añadidos
+La URL de OAuth en el navegador → el flujo de permisos
+Postman paso 1 → llamada al token con respuesta exitosa (access_token)
+Postman paso 2 → llamada al init de publicación con la respuesta de error unaudited_client_can_only_post_to_private_accounts
+Ese último error en realidad demuestra que la integración es correcta — TikTok lo sabe y es exactamente lo que esperan ver en sandbox.
+
+¿Usas Windows o Mac para grabar la pantalla?
+
+Ahora cuando voy a por el code, la aplicaicon ya esta autorizada, como la desautorizo par enseñarlo?
+
+21 jun
+Ve a TikTok directamente:
+
+Abre TikTok (app o web)
+Ve a Perfil → Ajustes → Seguridad → Aplicaciones autorizadas
+Busca VODdero y elimínala
+Así cuando vuelvas a abrir la URL de OAuth, TikTok volverá a pedir los permisos desde cero y podrás grabarlo completo.
+
+[TikTok](https://www.tiktok.com/)
+[Cargar](https://www.tiktok.com/tiktokstudio/upload?from=upload)
+1
+Administrar cuenta
+Política de privacidad
+Notificaciones push
+Verificación de la empresa
+Tiempo en pantalla
+Preferencias de contenido
+Administrar cuenta
+Control de la cuenta
+Desactivar o eliminar la cuenta
+Datos de la cuenta
+Región de la cuenta
+La región de tu cuenta se basa en el momento y el lugar de registro inicial.
+Spain
+Política de privacidad
+Visibilidad
+Cuenta privada
+Con una cuenta privada, solo los usuarios que apruebes podrán seguirte y ver tus vídeos. Esto no afectará a tus seguidores actuales.
+Interacciones
+Comentarios
+Quién puede comentar tus publicaciones
+Todo el mundo
+Mensajes directos
+Quién puede enviarte mensajes
+Datos
+Descargar tus datos
+Descarga una copia de tus datos de TikTok
+Notificaciones push
+Notificaciones de escritorio
+Permitir en el navegador
+Sigue al tanto de las notificaciones sobre me gusta, comentarios, los vídeos más recientes, etc. en el escritorio. Puedes desactivarlas en cualquier momento.
+Tus preferencias
+Tus preferencias se sincronizarán automáticamente con la aplicación TikTok.
+Interacciones
+Me gusta, comentarios, nuevos seguidores, menciones y etiquetas
+Notificaciones en la aplicación
+Verificación de la empresa
+Verificación de la empresa
+Verifica tu empresa para acceder a herramientas de marketing y funciones exclusivas que te ayudarán a conectar mejor con los espectadores.
+Tiempo en pantalla
+Tiempo en pantalla diario
+Recibe notificaciones si alcanzas el límite de tiempo en TikTok.
+Desactivado
+Descansos del tiempo en pantalla
+Recibe recordatorios para descansar del feed de vídeos.
+Desactivado
+Horario de sueño
+Recibe recordatorios cuando llegue tu horario de sueño.
+Desactivado
+Novedades sobre el tiempo en pantalla semanal
+Controla el tiempo que pasas delante de la pantalla desde la bandeja de entrada.
+Resumen
+Las métricas semanales incluyen el tiempo que pasas en la aplicación y en tiktok.com.
+Ayuda y recursos
+Consejos sobre bienestar digital
+Preferencias de contenido
+Filtra por palabras clave
+Al filtrar una palabra clave, no verás publicaciones en los feeds seleccionados que contengan esa palabra en el título, en la descripción o en los stickers. Ciertas palabras clave no se pueden filtrar.
+
+Mostrar más
+21 jun
+No está ahí en la web. Tienes que hacerlo desde la app móvil:
+
+Abre TikTok en el móvil
+Perfil → ☰ (tres líneas) arriba a la derecha
+Ajustes y privacidad
+Seguridad
+Aplicaciones y dispositivos autorizados (o "Gestionar permisos de apps")
+Busca VODdero → eliminar
+Si no lo encuentras en móvil, también puedes revocar desde aquí directamente:
+
+https://www.tiktok.com/setting/authorized-apps
+¿Lo ves en el móvil?
+
+No puede ser desde el pc?
+
+21 jun
+Sí, prueba esta URL directamente en el navegador:
+
+https://www.tiktok.com/setting/authorized-apps
+Si no funciona o no aparece VODdero, otra opción desde PC:
+
+Ve a tiktok.com
+Perfil → Ajustes (icono ☰)
+Busca "Seguridad y permisos" o "Privacidad"
+"Aplicaciones de terceros" o "Gestionar acceso"
+Si no lo encuentras por ningún lado en PC, la única forma es desde el móvil en la app nativa — TikTok tiene muchas opciones de seguridad que solo expone en la app, no en la web.
+
+¿Te aparece algo en esa URL?
+
+1782063890322_image.png
+Ya adjunte el video, rellename el texto:
+
+21 jun
+Aquí tienes el texto para pegar (998 caracteres):
+
+VODdero is a private social media management tool used internally to schedule 
+and publish video content to multiple brand TikTok accounts on behalf of 
+authorized clients.
+
+Login Kit (user.info.basic): Used to authenticate and identify each brand 
+account that connects to VODdero via OAuth 2.0. This allows us to display 
+the connected account name and avatar in our internal dashboard.
+
+Content Posting API - video.publish: Used to directly publish scheduled video 
+content to each brand's TikTok profile automatically, without manual 
+intervention. Each brand account individually authorizes the app before any 
+content is posted.
+
+Content Posting API - video.upload: Used to upload video files to TikTok's 
+servers prior to publishing, supporting the chunked upload flow required by 
+the API.
+
+The integration is demonstrated using Postman in sandbox mode, showing the 
+complete OAuth flow, access token retrieval, and video upload initialization 
+call. VODdero is not a public-facing app — it is used exclusively to manage 
+TikTok content for a defined set of brand accounts.
+¿Tienes ya el vídeo grabado para subir?
+
+1782063980979_image.png
+21 jun
+Pega esto (120 caracteres exactos):
+
+Internal tool for automated TikTok video publishing across multiple authorized brand accounts for agency use.
+Y dale a Submit.
+
+Creo que quiere que le explique los motivos por la que lo neceisto en produccion
+
+21 jun
+Tienes razón, es para justificar por qué necesitas salir de sandbox. Prueba esto:
+
+We need production access to publish video content publicly on behalf of
+authorized brand accounts. Sandbox only allows private posts, which does
+not meet our clients' requirements.
+120 caracteres tiene que ser
+
+21 jun
+Need production access to publish public videos for authorized brand accounts. Sandbox only allows private posts.
+(111 caracteres ✓)
+
+Ahora quiero hacer lo mismo pero para la api de instagram
+
+21 jun
+Para Instagram es bastante diferente al proceso de TikTok. Antes de entrar en detalle:
+
+¿Qué quieres hacer exactamente en Instagram?
+
+Subir Reels (vídeos)
+Subir posts (imágenes/carruseles)
+Ambos
+Y ¿tienes ya una cuenta de Facebook/Meta Business? porque Instagram usa la plataforma de desarrolladores de Meta, que es distinta a TikTok y requiere una Facebook App.
+
+Principalmente Reels y clips
+
+21 jun
+Para Instagram Reels la API es la de Meta, y el proceso es similar al de TikTok pero con algunos pasos extra.
+
+Lo que necesitas antes de empezar:
+Cuenta de Facebook (personal, para acceder al portal de developers)
+Cuenta de Instagram Professional (Creator o Business) — las cuentas personales no tienen acceso a la API
+Facebook Page vinculada a la cuenta de Instagram
+¿Tienes estos tres elementos, o alguno te falta?
+
+Desde una sola api no puedo subir contenido en muchas cuentas de instagram?
+
+21 jun
+Sí puedes, pero cada cuenta necesita autorizar tu app individualmente (igual que en TikTok con OAuth). El flujo es:
+
+1 app de Meta → conecta N cuentas de Instagram
+Cada cuenta hace login una vez y autoriza tu app
+Tu app usa el token de cada cuenta para publicar en su nombre
+El proceso es:
+Crear una Meta App en developers.facebook.com
+Añadir el producto Instagram Graph API
+Cada cuenta de Instagram (de tus marcas) autoriza tu app → te da su token
+Con ese token publicas Reels en su nombre via API
+Requisito clave que rompe a mucha gente:
+Cada cuenta de Instagram que quieras gestionar debe ser Professional (Business o Creator), no personal. Las cuentas personales no tienen acceso a la API de publicación.
+
+¿Tus cuentas de marcas ya son cuentas Business/Creator de Instagram, o algunas son personales?
+
+1782064301018_image.png
+Que hago ahora?
+
+21 jun
+Tu cuenta de Facebook está bloqueada desde 2022. Tienes dos opciones:
+
+Opción A — Recuperar esta cuenta
+Intenta acceder desde un dispositivo antiguo que hayas usado antes de 2022 (un móvil viejo, un portátil antiguo)
+Si no tienes ninguno, en la misma pantalla busca "¿Necesitas más ayuda?" y sigue el proceso de verificación de identidad con DNI
+Opción B — Crear una cuenta de Facebook nueva
+Para usar la API de Meta no necesitas que sea tu cuenta personal de siempre. Puedes:
+
+Crear una cuenta de Facebook nueva (con otro email)
+Crear una Meta App desde esa cuenta en developers.facebook.com
+Vincular las cuentas de Instagram de tus marcas a esa app
+Mi recomendación
+Ve por la Opción B — llevas bloqueado desde 2022, el proceso de recuperación de Meta es muy lento y frustrante. Una cuenta nueva para uso exclusivo de developer es más limpio.
+
+¿Tienes otro email disponible para crear la cuenta nueva?
+
+1782069336525_image.png
+seria esta?
+
+21 jun
+Sí, esa es la correcta — "Administrar mensajes y contenido en Instagram". Esa es la que incluye la Instagram Graph API para publicar Reels y contenido.
+
+Márcala y continúa. ¿Qué pantalla te aparece después?
+
+facebook tiene reels?
+
+21 jun
+Sí, Facebook también tiene Reels y la API de Meta permite publicar en ambas plataformas a la vez — Facebook e Instagram — con la misma llamada si quieres.
+
+Pero para tu caso de publicar Reels en Instagram, esa opción que has marcado es suficiente. No necesitas marcar nada específico de Facebook Reels a menos que también quieras publicar ahí.
+
+¿Qué pantalla te aparece ahora?
+
+Vamos a hacerlo: Te damos la bienvenida a la API de Instagram
+Empieza a usar la API de Instagram para crear, publicar y gestionar contenido. También puedes interactuar con los usuarios enviando y recibiendo mensajes, así como moderando comentarios. [Más información](https://developers.facebook.com/docs/instagram-platform/)Si quieres poder hacer un seguimiento de hashtags e insights, cambia al [API setup with Facebook login.](https://developers.facebook.com/apps/4263201010663850/use_cases/customize/?use_case_enum=INSTAGRAM_BUSINESS&product_route=instagram-business&selected_tab=API-Setup#)
+Nombre de aplicación de Instagram
+VODdero-IG
+Identificador de la aplicación de Instagram
+[1335338192114069](https://developers.facebook.com/apps/4263201010663850/use_cases/customize/?use_case_enum=INSTAGRAM_BUSINESS&product_route=instagram-business&selected_tab=API-Setup#)
+Clave secreta de la aplicación de Instagram
+Clave secreta de la aplicación de Instagram
+1. Añade los permisos de mensajes necesarios
+Add the listed content management and messaging permissions to create, publish and manage content and respond directly to messages and send private replies with your Instagram account. Manage these and optional permissions and features on the Permissions and features page.
+
+instagram_business_basic
+instagram_business_manage_comments
+instagram_business_manage_messages
+Genera identificadores de acceso Añade una cuenta de Instagram para generar identificadores de acceso y configurar suscripciones a webhooks. Antes de continuar, asegúrate de asignarle a la cuenta el rol de tester de Instagram en la pestaña [Roles](https://developers.facebook.com/apps/4263201010663850/roles/roles/).
+Configura los webhooks Configura una URL de webhook personalizada o usa servicios de ayuda para configurar un extremo. [Más información](https://developers.facebook.com/docs/instagram/platform/instagram-api/webhooks/) Para recibir webhooks, tu aplicación debe tener el estado "publicada". URL de devolución de llamada Identificador de verificación Asocia un certificado de cliente a las solicitudes de webhook. [Más información](https://developers.facebook.com/docs/graph-api/webhooks/getting-started/#mtls-for-webhooks).
+Configura un inicio de sesión empresarial de Instagram Proporciona una forma segura de que las empresas concedan permisos a tu aplicación para acceder a los datos con el inicio de sesión de empresa.
+Completa la revisión de la aplicación Instagram requiere que se complete correctamente el proceso de revisión de la aplicación para que esta pueda acceder a los datos en directo. Realiza el proceso de revisión para obtener acceso avanzado a los permisos de Instagram. Envía tu solicitud de revisión cuanto lo tengas todo listo. Información La API de Instagram te permite crear aplicaciones para publicar contenidos y administrar mensajes en Instagram...[Ver más](https://developers.facebook.com/apps/4263201010663850/use_cases/customize/?use_case_enum=INSTAGRAM_BUSINESS&product_route=instagram-business&selected_tab=API-Setup#) Recursos Hemos reunido algunos recursos para ayudarte a empezar. [Documentación para desarrolladores](https://developers.facebook.com/docs/instagram-platform/instagram-api-with-instagram-login/) [Empezar](https://developers.facebook.com/docs/instagram/platform/instagram-api/get-started/) [Comunidad de desarrolladores](https://developers.facebook.com/community) Políticas Al acceder a la plataforma y hacer uso de ella, aceptas las Políticas de la plataforma y las Políticas para desarrolladores, así como otras condiciones y políticas aplicables. [Política de la plataforma](https://developers.facebook.com/terms/#messengerplatform) [Política para desarrolladores](https://developers.facebook.com/devpolicy/)
+Mostrar más
+21 jun
+Perfecto, ya tienes la app creada. Vamos paso a paso igual que con TikTok.
+
+Paso 1 — Añade tu cuenta de Instagram como tester
+Antes de generar tokens necesitas esto:
+
+Ve a la pestaña Roles en el portal de tu app (el link que aparece en el paso 2)
+Busca "Testers de Instagram"
+Añade el username de Instagram de la cuenta con la que quieres probar
+¿Qué cuenta de Instagram vas a usar para las pruebas? ¿Es una cuenta Business o Creator?
+
+Rol de desarrollador insuficiente: Rol de desarrollador insuficiente
+21 jun
+Ese error significa que la cuenta de Instagram que intentas añadir como tester necesita aceptar la invitación desde la propia cuenta.
+
+Pasos:
+Ve a instagram.com → inicia sesión con la cuenta de Instagram que quieres usar de prueba
+Ve a Configuración → Aplicaciones y sitios web o directamente a:
+https://www.instagram.com/accounts/manage_access/
+Busca la sección "Invitaciones de tester"
+Acepta la invitación de VODdero-IG
+Si no aparece ninguna invitación, el problema puede ser otro — ¿con qué cuenta de Instagram intentaste añadir el tester? ¿Es una cuenta Business o Creator, o es personal?
+
+1782070004940_image.png
+21 jun
+Perfecto, ya tienes la cuenta armariololcast añadida. Haz clic en "Generar identificador" y dime el token que te devuelve.
+
+Los webhooks (paso 3) y el inicio de sesión empresarial (paso 4) los dejamos para después — no son necesarios para probar la subida de Reels ahora mismo.
+
+Ya lo tengo generado ahora que hago
+
+21 jun
+Ahora vamos a Postman igual que con TikTok.
+
+Llamada para subir un Reel — Paso 1: Crear el contenedor
+URL:
+
+https://graph.instagram.com/v21.0/TU_INSTAGRAM_USER_ID/media
+Sustituye TU_INSTAGRAM_USER_ID por el número que aparece debajo de armariololcast → 17841414315316744
+
+Method: POST
+
+Params (en Postman → Params):
+
+Key	Value
+access_token	TU_TOKEN_GENERADO
+media_type	REELS
+video_url	URL pública de tu vídeo
+caption	Test VODdero
+share_to_feed	true
+⚠️ El problema que vas a tener: el vídeo tiene que estar en una URL pública accesible — no puedes subir el archivo directamente como en TikTok.
+
+Necesitas alojar el vídeo en algún sitio. Opciones rápidas:
+
+Subirlo a tu repo de GitHub (si pesa menos de 100MB ✓ el tuyo pesa 2.5MB)
+Dropbox con link directo
+Google Drive con link directo
+¿Quieres que te explico cómo subirlo a GitHub para tener la URL pública?
+
+puedo subirlo publicarloy borrarlo?
+
+21 jun
+Sí, perfectamente. El flujo sería:
+
+Subes el vídeo a GitHub
+Copias la URL pública
+Haces la llamada a la API de Instagram con esa URL
+Instagram descarga el vídeo desde GitHub a sus servidores
+Borras el vídeo de GitHub — Instagram ya lo tiene, no lo necesita más
+Cómo subirlo a GitHub:
+Ve a tu repo voddero.github.io
+Add file → Upload files
+Sube el archivo mas_caderas_que_falcon__dannahouse.mp4
+La URL pública será:
+https://raw.githubusercontent.com/uveqqx/voddero.github.io/main/mas_caderas_que_falcon__dannahouse.mp4
+Súbelo y dime cuando esté listo para montar la llamada en Postman.
+
+{
+    "id": "18140616733477178"
+}
+21 jun
+Perfecto, el contenedor está creado. Ahora el Paso 2 — Publicar el Reel:
+
+URL:
+
+https://graph.instagram.com/v21.0/17841414315316744/media_publish
+Method: POST
+
+Params:
+
+Key	Value
+access_token	TU_TOKEN
+creation_id	18140616733477178
+Ejecuta esa llamada y dime qué responde.
+
+{
+    "error": {
+        "message": "Fatal",
+        "type": "OAuthException",
+        "code": -1,
+        "error_subcode": 2207082,
+        "is_transient": false,
+        "error_user_title": "Video Transcoding Error",
+        "error_user_msg": "Video Transcoding Error: facebook::videoinfra::um::MediaInfoExtractionException: Subprocess failed: exited with status 1.  stderr: I0621 12:31:45.482901 3510322 ThreadPools.cpp:14] Creating CPU thread pool with name=uma-utils, threads=42\\nI0621 12:31:45.482953 3510322 ThreadPools.cpp:28] Creating IO thread pool with name=uma-utils, threads=42\\nI0621 12:31:45.483038 3510322 main.cpp:218] Decoding config from base64\\nI0621 12:31:45.483051 3510322 main.cpp:50] Processing uri=ffuse://everstore://GAddxCE-bb_K8_MEAIGI-EEa7LApbgFKAAAP\\nE0621 12:31:45.568719 3510322 ParsingContext.cpp:85] Error when parsing : ftyp box not found\\nE0621 12:31:45.568754 3510322 ParsingContext.cpp:50] Exception when parsing : mp4utils::ParsingError: moov box not found\\nMd5 computation failed with exception: std::runtime_error: Subprocess failed: exited with status 1\\nSubprocess stderr: ffprobe version 7.1 Copyright (c) 2007-2024 the FFmpeg developers\\n  built with gcc 11.2.1 (GCC)\\n  libavutil      59. 39.100 / 59. 39.100\\n  libavcodec     61. 19.100 / 61. 19.100\\n  libavformat    61.  7.100 / 61.  7.100\\n  libavdevice    61.  3.100 / 61.  3.100\\n  libavfilter    10.  4.100 / 10.  4.100\\n  libswscale      8.  3.100 /  8.  3.100\\n  libswresample   5.  3.100 /  5.  3.100\\n  libpostproc    58.  3.100 / 58.  3.100\\nW0621 12:31:45.510010 3510339 Request.cpp:297] Calling RequestContext::setContextData for videos-rc but it is already set\\nI0621 12:31:45.510108 3510339 FfuseContext.cpp:46] [main][0] open: uri=everstore://GAddxCE-bb_K8_MEAIGI-EEa7LApbgFKAAAP, flags=1, options=(srvPath=/tmp/ffuse.sock, srvAddr=, readSize=8388608, readAhead=8388608, readCacheSize=134217728, writeSize=8388608, noSeek=false, writeMode=default, strict=true), ctx=A949027F, mode=READ\\nI0621 12:31:45.570814 3510339 FfuseContext.cpp:155] [main][0] EOF reached at 70657\\nI0621 12:31:45.573052 3510339 FfuseContext.cpp:155] [main][0] EOF reached at 70657\\nI0621 12:31:45.573059 3510339 FfuseContext.cpp:155] [main][0] EOF reached at 70657\\nI0621 12:31:45.575301 3510339 FfuseContext.cpp:192] [main][0] close: uri=everstore://GAddxCE-bb_K8_MEAIGI-EEa7LApbgFKAAAP read(count=6, bytes=70657, dur=53ms, rate=1MB/s) \\nffuse://everstore://GAddxCE-bb_K8_MEAIGI-EEa7LApbgFKAAAP: Invalid data found when processing input\\n\\nSubprocess stdout: {\\n\\n}\\n\\nfailed to run ffprobe command on path: ffuse://everstore://GAddxCE-bb_K8_MEAIGI-EEa7LApbgFKAAAP\\nI0621 12:31:45.603153 3510322 main.cpp:293] Exiting with 1 after 121ms \\n",
+        "fbtrace_id": "AmVCnEBHZamX7yrIQHWtdpJ"
+    }
+}
+Mostrar más
+21 jun
+El error es ftyp box not found y moov box not found — significa que Instagram no puede leer el vídeo porque la URL de GitHub Raw no sirve el archivo MP4 correctamente para streaming.
+
+Solución: convierte el vídeo antes de subirlo
+El vídeo necesita estar en formato MP4 con moov atom al inicio (fast start). Puedo convertirlo yo ahora mismo:
+
+
+Ejecutó un comando, leyó un archivo
+Ejecutó un comando, leyó un archivo
+Descarga ese vídeo, súbelo a GitHub sustituyendo el anterior, y usa la misma URL:
+
+https://raw.githubusercontent.com/uveqqx/voddero.github.io/main/video_voddero.mp4
+Luego repite los dos pasos en Postman (crear contenedor + publicar) con este nuevo vídeo. ¿Lo intentamos?
+
+
+Video voddero
+MP4 
+{
+    "error": {
+        "message": "Media ID is not available",
+        "type": "OAuthException",
+        "code": 9007,
+        "error_subcode": 2207027,
+        "is_transient": false,
+        "error_user_title": "No se puede publicar",
+        "error_user_msg": "El archivo multimedia no está listo para publicar; espera un momento",
+        "fbtrace_id": "AS3XUWUOD3BhTyRe1CDKSMI"
+    }
+}
+Mostrar más
+21 jun
+Buena señal — este error significa que el vídeo sí se está procesando correctamente ahora, pero Instagram necesita tiempo para transcodificarlo antes de publicarlo.
+
+Comprueba el estado primero:
+URL:
+
+https://graph.instagram.com/v21.0/18140616733477178?fields=status_code,status&access_token=TU_TOKEN
+Method: GET
+
+Ejecútala y dime qué valor tiene status_code. Cuando sea FINISHED ya puedes publicar. Los posibles valores son:
+
+status_code	Significado
+IN_PROGRESS	Aún procesando, espera
+FINISHED	Listo para publicar
+ERROR	Algo falló
+Espera 30-60 segundos y ejecútala.
+
+{
+    "status_code": "ERROR",
+    "status": "ERROR",
+    "id": "18140616733477178"
+}
+21 jun
+Sigue habiendo un problema con el vídeo. Vamos a convertirlo con especificaciones exactas que pide Instagram para Reels:
+
+
+Ejecutó un comando, leyó un archivo
+Ejecutó un comando, leyó un archivo
+Descarga ese vídeo, súbelo a GitHub sustituyendo el anterior, y vuelve a hacer los dos pasos desde el principio en Postman:
+
+Crear contenedor (nuevo creation_id)
+Esperar a que status_code sea FINISHED
+Publicar
+Este está convertido a 1080x1920, H.264 High, 30fps, AAC — las especificaciones exactas que pide Instagram para Reels.
+
+
+Reel instagram
+MP4 
+da error despues de estar in progress un rato. No me faltara algo de configuracion en la cuenta de instagram
+
+21 jun
+Sí, muy probablemente. La cuenta armariololcast — ¿es una cuenta personal de Instagram o es Business/Creator?
+
+La API de Instagram para publicar Reels solo funciona con cuentas Professional (Business o Creator). Con una cuenta personal da exactamente este tipo de errores silenciosos durante el procesamiento.
+
+Cómo comprobarlo y cambiarlo:
+Abre Instagram en el móvil con la cuenta armariololcast
+Perfil → ☰ → Configuración y privacidad
+Busca "Tipo de cuenta" o "Cambiar a cuenta profesional"
+Si ya es profesional verás "Cambiar a cuenta personal" (lo que significa que ya es Business/Creator ✓)
+¿Qué tipo de cuenta es?
+
+lo veo todo bien
+
+21 jun
+Vamos a diagnosticar con una llamada directa. En Postman:
+
+URL:
+
+https://graph.instagram.com/v21.0/17841414315316744?fields=account_type,username,media_count&access_token=TU_TOKEN
+Method: GET
+
+Dime qué devuelve, especialmente el campo account_type.
+
+{
+    "account_type": "MEDIA_CREATOR",
+    "username": "armariololcast",
+    "media_count": 0,
+    "id": "37462214140032266"
+}
+21 jun
+La cuenta es MEDIA_CREATOR ✓ — eso no es el problema.
+
+Noto algo importante: el ID que devuelve es 37462214140032266 pero el que estabas usando en las llamadas era 17841414315316744. Son diferentes.
+
+Repite el Paso 1 con el ID correcto:
+URL:
+
+https://graph.instagram.com/v21.0/37462214140032266/media
+Method: POST
+
+Params:
+
+Key	Value
+access_token	TU_TOKEN
+media_type	REELS
+video_url	https://raw.githubusercontent.com/uveqqx/voddero.github.io/main/reel_instagram.mp4
+caption	Test VODdero
+share_to_feed	true
+Ejecuta y dime el nuevo id que te devuelve.
+
+1782071024319_image.png
+el error el mismo, el id que estba usando es:
+
+21 jun
+Veo que el token ha caducado — por eso dice "Generar identificador" de nuevo.
+
+Haz clic en "Generar identificador" para obtener un token nuevo y dime el resultado. Luego repetimos la llamada con el ID correcto 37462214140032266.
+
+IGAASZBe6aYkZAVBZAGJVTUVxaW5EOC1nUEw2dnlzMlFfRjlmZADc2eWNKX3hDbWl1RW1TTEl5eEUyVHlfWXM3TVQ4ZAXNrM1hEay1rVGhReTVFOXI2NU9ORTAtZAzNlc3Mxd3ZAka01DUElaQ25FNk1FU0xRcUxOTHFRd1RzVm03MzFscwZDZD este es el token
+
+21 jun
+Perfecto. Ahora en Postman:
+
+URL:
+
+https://graph.instagram.com/v21.0/37462214140032266/media
+Method: POST
+
+Params:
+
+Key	Value
+access_token	IGAASZBe6aYkZAVBZAGJVTUVxaW5EOC1nUEw2dnlzMlFfRjlmZADc2eWNKX3hDbWl1RW1TTEl5eEUyVHlfWXM3TVQ4ZAXNrM1hEay1rVGhReTVFOXI2NU9ORTAtZAzNlc3Mxd3ZAka01DUElaQ25FNk1FU0xRcUxOTHFRd1RzVm03MzFscwZDZD
+media_type	REELS
+video_url	https://raw.githubusercontent.com/uveqqx/voddero.github.io/main/reel_instagram.mp4
+caption	Test VODdero
+share_to_feed	true
+Ejecuta y dime el id que te devuelve.
+
+{
+    "id": "18140619217477178"
+}
+21 jun
+Ahora espera 30-60 segundos y comprueba el estado:
+
+URL:
+
+https://graph.instagram.com/v21.0/18140619217477178?fields=status_code,status&access_token=IGAASZBe6aYkZAVBZAGJVTUVxaW5EOC1nUEw2dnlzMlFfRjlmZADc2eWNKX3hDbWl1RW1TTEl5eEUyVHlfWXM3TVQ4ZAXNrM1hEay1rVGhReTVFOXI2NU9ORTAtZAzNlc3Mxd3ZAka01DUElaQ25FNk1FU0xRcUxOTHFRd1RzVm03MzFscwZDZD
+Method: GET
+
+Dime qué status_code devuelve.
+
+{
+    "status_code": "ERROR",
+    "status": "ERROR",
+    "id": "18140619217477178"
+}
+21 jun
+El error genérico sin mensaje indica que el problema puede ser el vídeo en sí o la URL de GitHub Raw. Vamos a descartar la URL probando con un vídeo de prueba conocido que funcione con Instagram:
+
+
+Check original video specs
+Check original video specs
+El vídeo original ya es H264, 1080x1920, AAC — perfecto. El problema es que va a 60fps y Instagram solo acepta hasta 30fps. Conviértelo:
+
+
+Ejecutó un comando, leyó un archivo
+Ejecutó un comando, leyó un archivo
+Descarga ese vídeo, súbelo a GitHub sustituyendo el anterior, y repite los dos pasos en Postman con la URL:
+
+https://raw.githubusercontent.com/uveqqx/voddero.github.io/main/reel_30fps.mp4
+
+Reel 30fps
+MP4 
+error tambien
+
+21 jun
+El problema puede ser que GitHub Raw no es una URL lo suficientemente "limpia" para Instagram. Vamos a probar con otra forma de alojar el vídeo.
+
+¿Tienes cuenta en Dropbox o Google Drive?
+
+Con Dropbox es muy sencillo:
+
+Subes el vídeo
+Compartes el enlace
+Cambias ?dl=0 por ?dl=1 al final de la URL → descarga directa
+Con Google Drive también funciona con el formato:
+
+https://drive.google.com/uc?export=download&id=ID_DEL_ARCHIVO
+¿Cuál tienes disponible?
+
+Me haj rechazado en tiktoki por: Changes to your app were not approved for production. See why
+Update the following fields and resubmit changes to your app:
+
+Website URL If you have any questions, contact us [here](https://developers.tiktok.com/portal/support?category=support&enter_from_appId=7653611189297235969).
+11:43
+Fácil de arreglar. El problema es la Website URL — probablemente la URL de tu GitHub Pages no la reconocen como un sitio web legítimo de una herramienta.
+
+Solución:
+Ve a tu app en el portal developer de TikTok → Edit app
+Busca el campo Website URL o Web/Desktop URL
+Cámbiala por una URL más "seria" — tu GitHub Pages está bien pero asegúrate de que cuando TikTok la visita ve contenido real
+Primero comprueba que tu página carga bien:
+
+https://uveqqx.github.io/voddero.github.io/
+¿Qué se ve cuando abres esa URL en el navegador? ¿Carga el contenido del index.html que creaste, o da error 404?
+
+carga bien
+
+11:43
+Entonces el problema es que TikTok quiere ver una web que parezca una herramienta/producto real, no solo un documento de texto.
+
+Déjame generarte una página de presentación profesional para VODdero:
+
+
+Visualizó un archivo, archivo creado, leyó un archivo
+Visualizó un archivo, archivo creado, leyó un archivo
+Descarga ese index.html y reemplaza el que tienes en GitHub con este. Así cuando TikTok visite https://uveqqx.github.io/voddero.github.io/ verá una landing page profesional de producto real.
+
+Luego vuelve a reenviar la app en TikTok con la misma URL.
+
+
+Index
+Código · HTML 
+añade estilos a: TERMS OF SERVICE — VODdero
+Last updated: June 21, 2026
+1. ACCEPTANCE OF TERMS
+By using VODdero, you agree to these Terms of Service. If you do not agree, do not use the service.
+2. DESCRIPTION OF SERVICE
+VODdero is a content management tool that allows authorized users to schedule and publish video content to TikTok accounts on behalf of brands and organizations that have explicitly granted permission.
+3. USER RESPONSIBILITIES
+- You must have legal authorization to manage any TikTok account you connect to VODdero.
+- You are responsible for all content published through your connected accounts.
+- You agree to comply with TikTok's Terms of Service and Community Guidelines.
+4. PROHIBITED USE
+You may not use VODdero to publish spam, misleading content, or content that violates any applicable laws or platform policies.
+5. LIMITATION OF LIABILITY
+VODdero is provided "as is". We are not liable for any damages arising from the use or inability to use the service.
+6. CHANGES TO TERMS
+We reserve the right to modify these terms at any time. Continued use of the service constitutes acceptance of updated terms.
+7. CONTACT
 For questions about these Terms, contact: victor.logro@gmail.com
+
+Mostrar más
+12:36
+
+Archivo creado, leyó un archivo
+Archivo creado, leyó un archivo
+Descarga ese terms.html y súbelo a GitHub reemplazando el anterior. ¿Quieres que haga lo mismo con el privacy.html?
+
+
+Terms
+Código · HTML 
+
+
+
+
+
+Claude es IA y puede cometer errores. Por favor, verifica las respuestas.
+
+
+Terms · HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — VODdero</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0a0a0a;
+      --accent: #ff2d55;
+      --gray: #6e6e73;
+      --light: #f5f5f7;
+      --border: #e0e0e5;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--light);
+      color: var(--black);
+      line-height: 1.7;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 2rem;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.4rem;
+      letter-spacing: -0.02em;
+      color: var(--black);
+      text-decoration: none;
+    }
+    .logo span { color: var(--accent); }
+    nav a.back {
+      font-size: 0.875rem;
+      color: var(--gray);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    nav a.back:hover { color: var(--black); }
+    .container {
+      max-width: 720px;
+      margin: 3rem auto;
+      padding: 0 2rem 4rem;
+    }
+    .header {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .badge {
+      display: inline-block;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 0.25rem 0.85rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+    .updated {
+      font-size: 0.875rem;
+      color: var(--gray);
+    }
+    .section {
+      background: white;
+      border-radius: 16px;
+      padding: 1.75rem 2rem;
+      margin-bottom: 1rem;
+      border: 1px solid var(--border);
+    }
+    .section-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.4rem;
+    }
+    .section h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.85rem;
+    }
+    .section p {
+      font-size: 0.95rem;
+      color: #333;
+    }
+    .section ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .section ul li {
+      font-size: 0.95rem;
+      color: #333;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+    .section ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.85rem;
+    }
+    .section a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .section a:hover { text-decoration: underline; }
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--gray);
+      margin-top: 2rem;
+    }
+    footer a { color: var(--gray); }
+  </style>
+</head>
+<body>
+ 
+<nav>
+  <a class="logo" href="/">VOD<span>dero</span></a>
+  <a class="back" href="/">← Back to home</a>
+</nav>
+ 
+<div class="container">
+  <div class="header">
+    <div class="badge">Legal</div>
+    <h1>Terms of Service</h1>
+    <p class="updated">Last updated: June 21, 2026</p>
+  </div>
+ 
+  <div class="section">
+    <div class="section-num">01</div>
+    <h2>Acceptance of Terms</h2>
+    <p>By using VODdero, you agree to these Terms of Service. If you do not agree, do not use the service.</p>
+  </div>
+ 
+  <div class="section">
+    <div class="section-num">02</div>
+    <h2>Description of Service</h2>
+    <p>VODdero is a content management tool that allows authorized users to schedule and publish video content to TikTok accounts on behalf of brands and organizations that have explicitly granted permission.</p>
+  </div>
+ 
+  <div class="section">
+    <div class="section-num">03</div>
+    <h2>User Responsibilities</h2>
+    <ul>
+      <li>You must have legal authorization to manage any TikTok account you connect to VODdero.</li>
+      <li>You are responsible for all content published through your connected accounts.</li>
+      <li>You agree to comply with TikTok's Terms of Service and Community Guidelines.</li>
+    </ul>
+  </div>
+ 
+  <div class="section">
+    <div class="section-num">04</div>
+    <h2>Prohibited Use</h2>
+    <p>You may not use VODdero to publish spam, misleading content, or content that violates any applicable laws or platform policies.</p>
+  </div>
+ 
+  <div class="section">
+    <div class="section-num">05</div>
+    <h2>Limitation of Liability</h2>
+    <p>VODdero is provided "as is". We are not liable for any damages arising from the use or inability to use the service.</p>
+  </div>
+ 
+  <div class="section">
+    <div class="section-num">06</div>
+    <h2>Changes to Terms</h2>
+    <p>We reserve the right to modify these terms at any time. Continued use of the service constitutes acceptance of updated terms.</p>
+  </div>
+ 
+  <div class="section">
+    <div class="section-num">07</div>
+    <h2>Contact</h2>
+    <p>For questions about these Terms, contact: <a href="mailto:victor.logro@gmail.com">victor.logro@gmail.com</a></p>
+  </div>
+ 
+  <footer>
+    <p>© 2026 VODdero · <a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a></p>
+  </footer>
+</div>
+ 
+</body>
+</html>
+ 
 
