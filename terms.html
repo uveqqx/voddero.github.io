@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terms of Service — VODdero</title>
+  <title>VODdero</title>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/logo-icon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -36,7 +38,11 @@
       letter-spacing: -0.02em;
       color: var(--black);
       text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
+    .logo img { width: 28px; height: 28px; }
     .logo span { color: var(--accent); }
     nav a.back {
       font-size: 0.875rem;
@@ -143,12 +149,13 @@
 <body>
 
 <nav>
-  <a class="logo" href="/">VOD<span>dero</span></a>
+  <a class="logo" href="/"><img src="/logo-icon.png" alt="VODdero" />VOD<span>dero</span></a>
   <a class="back" href="/">← Back to home</a>
 </nav>
 
 <div class="container">
   <div class="header">
+    <img src="/logo-icon.png" alt="VODdero" style="width:56px;height:56px;margin-bottom:1rem;display:block;" />
     <div class="badge">Legal</div>
     <h1>Terms of Service</h1>
     <p class="updated">Last updated: June 21, 2026</p>
